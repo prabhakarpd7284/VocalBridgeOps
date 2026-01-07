@@ -1,0 +1,29 @@
+{
+  "name": "vocalbridge-ops",
+  "version": "1.0.0",
+  "description": "Multi-tenant AI Agent Gateway with mocked AI vendors, reliability features, and usage/billing",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd packages/backend && npm run dev",
+    "dev:frontend": "cd packages/frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd packages/backend && npm run build",
+    "build:frontend": "cd packages/frontend && npm run build",
+    "test": "cd packages/backend && npm run test",
+    "lint": "cd packages/backend && npm run lint && cd ../frontend && npm run lint",
+    "lint:fix": "cd packages/backend && npm run lint:fix && cd ../frontend && npm run lint:fix",
+    "format": "prettier --write \"packages/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "typecheck": "cd packages/backend && npm run typecheck && cd ../frontend && npm run typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

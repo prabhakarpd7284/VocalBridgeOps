@@ -1,0 +1,14 @@
+node_modules
+packages/backend/dist
+packages/frontend/dist
+packages/backend/node_modules
+packages/frontend/node_modules
+# .env
+.DS_Store
+.vscode
+
+packages/backend/data
+
+!README.md
+!ARCHITECTURE.md
+*.md
